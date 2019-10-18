@@ -3,7 +3,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'hello',
-  template: `<h1>Test saisie de champs</h1>
+  template: `<h1>Test  saisie de champs</h1>
    <form [formGroup]="testInput" (ngSubmit)="onFormSubmit()" autocomplete="off">
 
      <div style="position:absolute; left: 0%;top: 15%;right: 0;bottom: 0;">
