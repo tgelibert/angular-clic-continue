@@ -1,7 +1,7 @@
 <h1>Test  saisie de champs</h1>
    <form [formGroup]="testInput" (ngSubmit)="onFormSubmit()" autocomplete="off">
 
-     <div style="position:absolute; left: 0%;top: 15%;right: 0;bottom: 0;">
+     <div >
      <p>Votre nom : </p>
      <input type="text" id="nom" [formControl]="testInput.get('nom')" maxlength="10" />
     
@@ -15,7 +15,7 @@
      </div>
      
 
-     <div style="position:absolute; left: 0%;top: 30%;right: 0;bottom: 0;">
+     <div >
      <p>Votre prénom : </p> 
      <input type="text" id="prenom" [formControl]="testInput.get('prenom')" maxlength="10"/>
      <div *ngIf="(submitted || prenom.touched) && prenom.errors?.required" class="help-block">
@@ -27,8 +27,94 @@
       </div>
     </div> 
     
-    <div style="position:absolute; left: 60%;top: 50%;right: 0;bottom: 0;"> 
+    <div > 
     <button type="submit"  >submit</button>
     </div>
     
     </form>
+
+
+    <div class="rowsd conteneur-reinitialisation-mdp-cnaf">
+  <div class="col-sm-12">
+    <h3 class="titre-bloc-cnaf filet-cnaf">
+      Mot de passe oublié
+    </h3>
+    <div *ngIf="libelleRetourCaffr" class="alert alert-danger">
+      <div [innerHtml]=libelleRetourCaffr role="alert"></div>
+    </div>
+    <div *ngIf="libelleRetourCaffr" class="alert alert-danger">
+      <div [innerHtml]=libelleRetourCaffr role="alert"></div>
+    </div>
+    <div class="progress" *ngIf="loading || traitementEncours">
+      <div class="progress-bar progress-bar-info progress-bar-info-striped active" role="progressbar">
+        Chargement en cours...
+      </div>
+    </div>
+    <div *ngIf="!loading" [hidden]="traitementEncours">
+      <div class="row">
+        <div class="col-sm-8">
+          <br />
+          <div>
+            <p>Vous avez perdu votre mot de passe ?</p>
+            <div>
+              <p>Nous allons vous envoyer un code de vérification par :</p>
+              <!-- TODO finish -->
+
+
+
+
+              <div  class="form-group btn-group-vertical btn-block">
+                <label class="btn btn-default btn-block" >
+                  <input type="radio" value="sms" name="envoi1" class="sr-only" id="choixSms" [(ngModel)]="choixEnvoi"/>
+                  <span>{{sms}}</span>
+                </label>
+                
+                <label class="btn btn-default btn-block"  >
+                  <input type="radio"  value="email" name="envoi1" class="sr-only" id="choixEmail" [(ngModel)]="choixEnvoi"/>
+                  <span>{{email}}</span>
+                </label>
+                
+                <label class="btn btn-default btn-block" >
+                  <input type="radio" value="courrier" name="envoi1" class="sr-only" id="choixCourrier" [(ngModel)]="choixEnvoi"/>
+                  <span>{{courrier}}</span>
+                </label>
+              </div>
+
+             
+
+            </div>
+            <br />
+          </div>
+        </div>
+        <br />
+        <h1 >{{ choixEnvoi}} </h1>
+        <div class="row">
+          <div class="col-sm-12">
+            <button (click)="openClientModal()" class="btn btn-form-cnaf btn-secondaire-cnaf"
+              type="button">Abandonner</button>
+            <a href="/redirect/s/Redirect?page=aideConnexion"
+              class="btn btn-form-cnaf btn-majeur-cnaf btn-login-cnaf align-middle-cnaf">Aide à la connexion</a>
+
+            <button (click)="showContent()" [disabled]="traitementEncours" class="btn btn-form-cnaf btn-majeur-cnaf pull-right"
+              >Envoyer</button>
+          </div>
+        </div>
+        <h1 >{{ showcontent}} </h1>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-check-inline">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input"  checked="checked" name="radio"  [(ngModel)]="radio1" value="truc">Actif
+    </label>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="radio"  [(ngModel)]="radio1" value="machin">Désactivé 
+
+    </label>
+  </div>
+  {{radio1}}
