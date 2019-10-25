@@ -1,5 +1,5 @@
-<h1>Test  saisie de champs</h1>
-   <form [formGroup]="testInput" (ngSubmit)="onFormSubmit()" autocomplete="off">
+    <h1>Test  saisie de champs</h1>
+   <!--form [formGroup]="testInput" (ngSubmit)="onFormSubmit()" autocomplete="off">
 
      <div >
      <p>Votre nom : </p>
@@ -31,7 +31,7 @@
     <button type="submit"  >submit</button>
     </div>
     
-    </form>
+    </form-->
 
 
     <div class="rowsd conteneur-reinitialisation-mdp-cnaf">
@@ -63,19 +63,19 @@
 
 
 
-              <div  class="form-group btn-group-vertical btn-block">
+              <div data-toggle="buttons" class="form-group btn-group-vertical btn-block">
                 <label class="btn btn-default btn-block" >
-                  <input type="radio" value="sms" name="envoi1" class="sr-only" id="choixSms" [(ngModel)]="choixEnvoi"/>
+                  <input type="radio" value="sms" name="envoi" class="sr-only" id="choixSms" [(ngModel)]="choixEnvoi"/>
                   <span>{{sms}}</span>
                 </label>
                 
                 <label class="btn btn-default btn-block"  >
-                  <input type="radio"  value="email" name="envoi1" class="sr-only" id="choixEmail" [(ngModel)]="choixEnvoi"/>
+                  <input type="radio"  value="email" name="envoi" class="sr-only" id="choixEmail" [(ngModel)]="choixEnvoi"/>
                   <span>{{email}}</span>
                 </label>
                 
                 <label class="btn btn-default btn-block" >
-                  <input type="radio" value="courrier" name="envoi1" class="sr-only" id="choixCourrier" [(ngModel)]="choixEnvoi"/>
+                  <input type="radio" value="courrier" name="envoi" class="sr-only" id="choixCourrier" [(ngModel)]="choixEnvoi"/>
                   <span>{{courrier}}</span>
                 </label>
               </div>
