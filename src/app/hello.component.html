@@ -64,18 +64,18 @@
 
 
               <div data-toggle="buttons" class="form-group btn-group-vertical btn-block">
-                <label class="btn btn-default btn-block" >
-                  <input type="radio" value="sms" name="envoi" class="sr-only" id="choixSms" [(ngModel)]="choixEnvoi"/>
+                <label class="btn btn-default btn-block" (click)="choixEnvoi='sms'">
+                  <input type="radio" value="sms" name="envoi" class="sr-only" id="choixSms" />
                   <span>{{sms}}</span>
                 </label>
                 
-                <label class="btn btn-default btn-block"  >
-                  <input type="radio"  value="email" name="envoi" class="sr-only" id="choixEmail" [(ngModel)]="choixEnvoi"/>
+                <label class="btn btn-default btn-block" (click)="choixEnvoi='email'" >
+                  <input type="radio"  value="email" name="envoi" class="sr-only" id="choixEmail" />
                   <span>{{email}}</span>
                 </label>
                 
-                <label class="btn btn-default btn-block" >
-                  <input type="radio" value="courrier" name="envoi" class="sr-only" id="choixCourrier" [(ngModel)]="choixEnvoi"/>
+                <label class="btn btn-default btn-block" (click)="choixEnvoi='courrier'">
+                  <input type="radio" value="courrier" name="envoi" class="sr-only" id="choixCourrier" />
                   <span>{{courrier}}</span>
                 </label>
               </div>
@@ -87,7 +87,8 @@
           </div>
         </div>
         <br />
-        <h1 >{{ choixEnvoi}} </h1>
+        <h1 >{{choixEnvoi}} </h1>
+        <br/>
         <div class="row">
           <div class="col-sm-12">
             <button (click)="openClientModal()" class="btn btn-form-cnaf btn-secondaire-cnaf"
@@ -99,22 +100,11 @@
               >Envoyer</button>
           </div>
         </div>
-        <h1 >{{ showcontent}} </h1>
+       
       </div>
     </div>
   </div>
 
 
 
-  <div class="form-check-inline">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input"  checked="checked" name="radio"  [(ngModel)]="radio1" value="truc">Actif
-    </label>
-  </div>
-  <div class="form-check-inline">
-    <label class="form-check-label">
-    <input type="radio" class="form-check-input" name="radio"  [(ngModel)]="radio1" value="machin">Désactivé 
-
-    </label>
-  </div>
-  {{radio1}}
+  
